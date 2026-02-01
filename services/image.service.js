@@ -179,7 +179,6 @@ exports.saveImage = async (imageId, userId) => {
       [imageId, userId]
     );
   } catch (err) {
-    // duplicate save
     if (err.code === "ER_DUP_ENTRY") {
       throw new Error("Image already saved");
     }
